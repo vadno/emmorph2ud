@@ -2,12 +2,12 @@
 # coding=utf-8
 
 import sys
-import mappings as mp
-import lex_lists as ls
-import remove_feats as rm
+import converterdata.mappings as mp
+import converterdata.lex_lists as ls
+import converterdata.remove_feats as rm
 
 
-class EmMorph2Dep:
+class EmMorph2UD:
     def __init__(self, source_fields=None, target_fields=None):
 
         # Field names for e-magyar TSV
@@ -295,7 +295,7 @@ class EmMorph2Dep:
 
 
 def main():
-    conv = EmMorph2Dep()
+    conv = EmMorph2UD()
     print('TEST:', conv.process_sentence([['veszeget', 'vesz', '[/V][_Freq/V][Prs.NDef.3Sg]']], [0, 1, 2]))
     for line in sys.stdin:
         token, lemma, elemzes = line.strip().split('\t')[:3]
