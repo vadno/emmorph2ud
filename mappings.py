@@ -41,7 +41,7 @@ POS_RULES = {
     '/Det|Pro|(Post)': 'DET_PRON',
     '/Det|Pro|def': 'DET_PRON',
     '/Det|Q.NDef': 'DET',
-	'/Det|Q|indef': 'DET',
+    '/Det|Q|indef': 'DET',
     '/Det|Q': 'DET',
 
     '/Inj-Utt': 'INTJ',
