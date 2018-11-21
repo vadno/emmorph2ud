@@ -101,6 +101,9 @@ class EmMorph2UD:
         univfeature = []
         univfeature_dict = {}
 
+        if not univpos:
+            univpos = 'X'
+
         # kötőszók a lex_listből
         if univpos == 'CONJ':
             if lemma in ls.SCONJ:
@@ -113,7 +116,7 @@ class EmMorph2UD:
 
         # a 'meg' igekötő kezelése
         elif univpos == 'ADP':
-            if lemma in ls.PART:
+            if lemma == ls.PART:
                 return 'PART', '_'
             else:
                 return univpos, '_'
@@ -169,16 +172,6 @@ class EmMorph2UD:
         # maradékok névszók és határozószók
         else:
 
-            # determinánsok
-            if univpos == 'DET':
-                univfeature_dict['PronType'] = 'Art'
-                if lemma in ls.PRON_DEF_ART:
-                    univfeature_dict['Definite'] = 'Def'
-                elif lemma in ls.PRON_INDEF_ART:
-                    univfeature_dict['Definite'] = 'Ind'
-                else:
-                    univpos = 'PRON'
-
             # vonatkozó és kérdőnévmások
             if pos_feat in mp.REL_PRON:
                 univfeature_dict['PronType'] = 'Rel'
@@ -195,7 +188,7 @@ class EmMorph2UD:
                 elif lemma in ls.PRON_PRS:
                     univpos = 'PRON'
                     univfeature_dict['PronType'] = 'Prs'
-                elif lemma in ls.PRON_RCP:
+                elif lemma == ls.PRON_RCP:
                     univpos = 'PRON'
                     univfeature_dict['PronType'] = 'Rcp'
                 elif lemma in ls.PRON_DEM:
@@ -214,10 +207,25 @@ class EmMorph2UD:
                     rm.del_feat('PronType', univfeature_dict)
 
                 if univpos == 'PRON':
-                    if lemma in ls.PRON_POSS:
+                    if lemma == ls.PRON_POSS:
                         univfeature_dict['Poss'] = 'Yes'
+                    if 'Number[psed]' in univfeature_dict:
+                        univfeature_dict['Poss'] = 'Yes'
+                        rm.del_feat('Number[psed]')
                     if 'Person' not in univfeature_dict:
                         univfeature_dict['Person'] = '3'
+                    if 'PronType' not in univfeature_dict and 'Reflex' not in univfeature_dict:
+                        univfeature_dict['PronType'] = 'Prs'
+
+            # determinánsok
+            if univpos == 'DET':
+                univfeature_dict['PronType'] = 'Art'
+                if lemma in ls.PRON_DEF_ART:
+                    univfeature_dict['Definite'] = 'Def'
+                elif lemma == ls.PRON_INDEF_ART:
+                    univfeature_dict['Definite'] = 'Ind'
+                else:
+                    univpos = 'ADV'
 
             # határozószói névmások
             elif univpos == 'ADV':

@@ -16,9 +16,7 @@ PRON_DEF_ART = (
     'az'
 )
 
-PRON_INDEF_ART = (
-    'egy'
-)
+PRON_INDEF_ART = 'egy'
 
 
 PRON_DEM = (
@@ -87,9 +85,7 @@ PRON_TOT = (
     'semelyik'
 )
 
-PRON_RCP = (
-    'egymás'
-)
+PRON_RCP = 'egymás'
 
 PRON_REFL = (
     'maga',
@@ -107,10 +103,6 @@ PRON_PRS = (
     'ön'
 )
 
-PRON_POSS = (
-    'saját'
-)
+PRON_POSS = 'saját'
 
-PART = (
-    'meg'
-)
+PART = 'meg'
