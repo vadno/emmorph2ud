@@ -246,7 +246,7 @@ class EmMorph2UD:
 
                 # tulajdonnév
                 if univpos == 'NOUN':
-                    if lemma[0].isupper():
+                    if len(lemma) > 0 and lemma[0].isupper():
                         univpos = 'PROPN'
 
                 # default alapfok a fokozás jegyének
@@ -299,7 +299,7 @@ class EmMorph2UD:
 
     @staticmethod
     def prepare_fields(field_names):
-        return [field_names['string'], field_names['lemma'], field_names['hfstana']]
+        return [field_names['form'], field_names['lemma'], field_names['xpostag']]
 
 
 def main():
