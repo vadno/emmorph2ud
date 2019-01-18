@@ -6,12 +6,12 @@ The script converts the output tag of emMorph morphological analyzer to the corr
 
 * the main script of the converter: `converter.py`
 * auxiliary files in folder `converterdata`
-* full list of emMorph tags in folder `tagsets` TODO
-* a table of ud tags in folder `tagsets` TODO
 * license
 * this readme
 
 # The tagsets :hungary:
+
+A detailed description of the tagsets is available [here](https://github.com/dlt-rilmta/panmorph).
 
 ## emMorph
 
