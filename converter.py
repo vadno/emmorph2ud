@@ -12,7 +12,7 @@ class EmMorph2UD:
 
         # Field names for e-magyar TSV
         if source_fields is None:
-            source_fields = {}
+            source_fields = set()
 
         if target_fields is None:
             target_fields = []
