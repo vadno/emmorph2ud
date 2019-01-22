@@ -211,7 +211,7 @@ class EmMorph2UD:
                         univfeature_dict['Poss'] = 'Yes'
                     if 'Number[psed]' in univfeature_dict:
                         univfeature_dict['Poss'] = 'Yes'
-                        rm.del_feat('Number[psed]')
+                        rm.del_feat('Number[psed]', univfeature_dict)
                     if 'Person' not in univfeature_dict:
                         univfeature_dict['Person'] = '3'
                     if 'PronType' not in univfeature_dict and 'Reflex' not in univfeature_dict:
