@@ -42,7 +42,7 @@ class EmMorph2UD:
         :return: nyomtatáshoz formázott sztring
         """
         if featdict:
-            return '|'.join([feat + '=' + featdict[feat] for feat in sorted(featdict)])
+            return '|'.join([feat + '=' + featdict[feat] for feat in sorted(featdict, key=str.lower)])
 
         return '_'
 
