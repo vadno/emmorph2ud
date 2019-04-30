@@ -29,8 +29,8 @@ POS_RULES = {
     '/Adv|Pro|Rel': 'PRON',
     '/Adv|Pro|Int': 'PRON',
 
-    '/Cnj': 'CONJ',
-    '/Cnj|Abbr': 'CONJ',
+    '/Cnj': 'CCONJ',
+    '/Cnj|Abbr': 'CCONJ',
     '/CmpdPfx': 'X',
     '/Det': 'DET',
     '/Det|Art.Def': 'DET',
