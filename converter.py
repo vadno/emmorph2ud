@@ -105,7 +105,7 @@ class EmMorph2UD:
             univpos = 'X'
 
         # kötőszók a lex_listből
-        if univpos == 'CONJ':
+        if univpos == 'CCONJ':
             if lemma in ls.SCONJ:
                 return 'SCONJ', '_'
             else:
