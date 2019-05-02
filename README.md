@@ -1,4 +1,4 @@
-# emmorph2dep
+# emmorph2ud
 
 The script converts the output tag of emMorph morphological analyzer to the corresponding output tag of magyarlanc 3.0.
 
