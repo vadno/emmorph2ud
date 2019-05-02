@@ -67,7 +67,7 @@ class EmMorph2UD:
             if len(emmorph_features) > 1:
                 punct_feat = True
             else:
-                return 'PUNCT', '_'
+                return 'Punct', '_'
 
         # a felsőfok jele szófaj volt, átkerül az inflexiós jegyek közé
         for feat in pos_feats:
@@ -105,7 +105,7 @@ class EmMorph2UD:
             univpos = 'X'
 
         # kötőszók a lex_listből
-        if univpos == 'CCONJ':
+        if univpos == 'CONJ':
             if lemma in ls.SCONJ:
                 return 'SCONJ', '_'
             else:
