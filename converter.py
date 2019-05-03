@@ -67,7 +67,7 @@ class EmMorph2UD:
             if len(emmorph_features) > 1:
                 punct_feat = True
             else:
-                return 'Punct', '_'
+                return 'PUNCT', '_'
 
         # a felsőfok jele szófaj volt, átkerül az inflexiós jegyek közé
         for feat in pos_feats:
