@@ -8,6 +8,8 @@ import converterdata.remove_feats as rm
 
 
 class EmMorph2UD:
+    pass_header = True
+
     def __init__(self, source_fields=None, target_fields=None):
 
         # Field names for e-magyar TSV
