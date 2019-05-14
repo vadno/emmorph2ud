@@ -66,6 +66,8 @@ NEG = (
     'se'
 )
 
+QPTCL = '-e'
+
 PRON_TOT = (
     'mindenki',
     'minden',

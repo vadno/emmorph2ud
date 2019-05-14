@@ -81,8 +81,8 @@ POS_RULES = {
     '/Post|(Supe)': 'ADP',
     '/Post|(Ter)': 'ADP',
     '/Prep': 'ADP',
-    '/Prev': 'ADP',     # meg -> PART
-    '/QPtcl': 'ADV',    # TODO PronType=Int (kérdőpartikula)
+    '/Prev': 'ADV',     # meg -> PART
+    '/QPtcl': 'ADV',    # DONE PronType=Int (kérdőpartikula)
     '/S|Abbr': 'X',
     '/V': 'VERB',
     '/X': 'X',

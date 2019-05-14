@@ -239,6 +239,8 @@ class EmMorph2UD:
                     univfeature_dict['PronType'] = 'Tot'
                 elif lemma in ls.PRON_DEM:
                     univfeature_dict['PronType'] = 'Dem'
+                elif lemma in ls.QPTCL:
+                    univfeature_dict['PronType'] = 'Int'
 
             # névszók
             if univpos in ('NOUN', 'ADJ', 'NUM', 'PRON'):
