@@ -117,7 +117,7 @@ class EmMorph2UD:
             return univpos, '_'
 
         # a 'meg' igekötő kezelése
-        elif univpos == 'ADP':
+        elif univpos == 'ADV':
             if lemma == ls.PART:
                 return 'PART', '_'
             else:
