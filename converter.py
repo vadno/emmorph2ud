@@ -117,11 +117,8 @@ class EmMorph2UD:
             return univpos, '_'
 
         # a 'meg' igekötő kezelése
-        elif univpos == 'ADV':
-            if lemma == ls.PART:
-                return 'PART', '_'
-            else:
-                return univpos, '_'
+        elif univpos == 'ADV' and lemma == ls.PART:
+            return 'PART', '_'
 
         elif univpos == 'VERB':
 
@@ -308,7 +305,7 @@ class EmMorph2UD:
 
 def main():
     conv = EmMorph2UD()
-    print('TEST:', conv.process_sentence([['veszeget', 'vesz', '[/V][_Freq/V][Prs.NDef.3Sg]']], [0, 1, 2]))
+    #print('TEST:', conv.process_sentence([['veszeget', 'vesz', '[/V][_Freq/V][Prs.NDef.3Sg]']], [0, 1, 2]))
     for line in sys.stdin:
         token, lemma, elemzes = line.strip().split('\t')[:3]
         univpos, univfeature = conv.parse(token, lemma, elemzes)
