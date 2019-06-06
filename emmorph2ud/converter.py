@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-# coding=utf-8
+# -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
-import sys
-import converterdata.mappings as mp
-import converterdata.lex_lists as ls
-import converterdata.remove_feats as rm
+from .converterdata import mappings as mp
+from .converterdata import lex_lists as ls
+from .converterdata import remove_feats as rm
 
 
 class EmMorph2UD:
@@ -301,16 +300,3 @@ class EmMorph2UD:
     @staticmethod
     def prepare_fields(field_names):
         return [field_names['form'], field_names['lemma'], field_names['xpostag']]
-
-
-def main():
-    conv = EmMorph2UD()
-    #print('TEST:', conv.process_sentence([['veszeget', 'vesz', '[/V][_Freq/V][Prs.NDef.3Sg]']], [0, 1, 2]))
-    for line in sys.stdin:
-        token, lemma, elemzes = line.strip().split('\t')[:3]
-        univpos, univfeature = conv.parse(token, lemma, elemzes)
-        print(token, lemma, elemzes, univpos, univfeature, sep='\t')
-
-
-if __name__ == '__main__':
-    main()

@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: utf-8, vim: expandtab:ts=4 -*-
+
+
 def del_feat(featname, feats):
     """
     kitölri az adott jegyet a jegy-érték párok dictionary-jéből
