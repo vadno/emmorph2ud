@@ -4,7 +4,7 @@ The script converts the output tag of emMorph morphological analyzer to the corr
 
 # What's in this repo?
 
-* the main script of the converter: `main.py`
+* the main script of the converter: `__main__.py` (run it with `python3 -m emmorph2ud`)
 * auxiliary files in folder `converterdata`
 * license
 * this readme
